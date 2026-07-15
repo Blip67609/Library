@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Виртуальная библиотека комплиментов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <section id="welcome-screen" class="screen active">
+      <div class="card-container">
+        <div class="library-card" id="libraryCard">
+          <div class="card-border"></div>
+          <div class="card-content">
+            <div class="card-library-name" id="cardLibraryName">Виртуальная библиотека комплиментов</div>
+            <div class="card-divider"></div>
+            <div class="card-label">Читательский билет</div>
+            <div class="card-number" id="cardNumber">№0001</div>
+            <div class="card-title" id="cardTitle">Почётный читатель</div>
+            <div class="card-name-wrapper">
+              <input type="text" id="nameInput" class="card-name-input" placeholder="Введите имя" maxlength="30" autocomplete="off">
+              <span class="card-name-display" id="cardNameDisplay"></span>
+            </div>
+            <button id="getCardBtn" class="card-btn">Получить читательский билет</button>
+            <div class="card-seal" id="cardSeal">
+              <svg viewBox="0 0 100 100" width="60" height="60">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#C9A96E" stroke-width="2"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#C9A96E" stroke-width="1" stroke-dasharray="4 4"/>
+                <text x="50" y="55" text-anchor="middle" fill="#C9A96E" font-size="14" font-family="Cormorant Garamond, serif">Б</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-hint" id="scrollHint">
+          <span>Листай вниз, чтобы войти в библиотеку</span>
+          <div class="scroll-arrow">↓</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="library-screen" class="screen">
+      <div class="library-overlay"></div>
+      <div class="library-container">
+        <nav class="ladder-nav" id="ladderNav">
+          <div class="ladder-label">Полки</div>
+          <div class="ladder-steps" id="ladderSteps"></div>
+        </nav>
+        <div class="library-main">
+          <div class="library-header">
+            <h1 class="library-title" id="libraryTitle"></h1>
+            <button class="diary-btn" id="diaryBtn">📖 Дневник читателя</button>
+          </div>
+          <div class="shelves-container" id="shelvesContainer"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reading-screen" class="screen">
+      <div class="reading-overlay"></div>
+      <div class="book-container" id="bookContainer">
+        <div class="book-wrapper" id="bookWrapper">
+          <div class="book-spine"></div>
+          <div class="book-pages" id="bookPages">
+            <div class="book-cover" id="bookCover">
+              <div class="cover-content">
+                <div class="cover-volume" id="coverVolume"></div>
+                <div class="cover-title" id="coverTitle"></div>
+                <div class="cover-edition">Специальное издание</div>
+                <div class="cover-for" id="coverFor"></div>
+              </div>
+            </div>
+            <div class="book-page" id="bookPageContent">
+              <div class="page-text" id="pageText"></div>
+              <div class="page-number" id="pageNumber"></div>
+            </div>
+            <div class="book-end" id="bookEnd">
+              <div class="end-message" id="endMessage">Спасибо, что дочитала этот том.</div>
+              <button class="back-to-library-btn" id="backToLibraryBtn">Вернуться в библиотеку</button>
+            </div>
+          </div>
+          <button class="page-nav page-prev" id="pagePrev">‹</button>
+          <button class="page-nav page-next" id="pageNext">›</button>
+        </div>
+        <button class="close-book-btn" id="closeBookBtn">✕</button>
+      </div>
+    </section>
+
+    <section id="diary-screen" class="screen">
+      <div class="diary-container">
+        <div class="diary-header">
+          <h2 class="diary-title">Читательский дневник</h2>
+          <button class="diary-close-btn" id="diaryCloseBtn">✕</button>
+        </div>
+        <div class="diary-reader-name" id="diaryReaderName"></div>
+        <div class="diary-progress" id="diaryProgress"></div>
+        <div class="achievements-list" id="achievementsList"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
